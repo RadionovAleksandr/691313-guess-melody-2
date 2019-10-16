@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Welcome = ({gameTime, errorCount}) => {
   return (
@@ -18,6 +19,11 @@ const Welcome = ({gameTime, errorCount}) => {
       <p className="welcome__text">Удачи!</p>
     </section>
   );
+};
+
+Welcome.propTypes = {
+  gameTime: PropTypes.number.isRequired,
+  errorCount: PropTypes.number.isRequired,
 };
 
 export default Welcome;
