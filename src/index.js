@@ -8,10 +8,13 @@ const init = () => {
     errorCount: 3,
   };
 
+  const playClickHandler = () => {};
+
   ReactDOM.render(
       <App
         gameTime={setting.gameTime}
         errorCount={setting.errorCount}
+        playClickHandler={playClickHandler}
       />,
       document.querySelector(`#root`)
   );
