@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Welcome = ({gameTime, errorCount, playClickHandler}) => {
+const Welcome = ({gameTime, errorCount, onStartButtonClick}) => {
   return (
     <section className="welcome">
       <div className="welcome__logo">
         <img src="img/melody-logo.png" alt="Угадай мелодию" width="186" height="83"/>
       </div>
-      <button className="welcome__button" onClick={playClickHandler}>
+      <button className="welcome__button" onClick={onStartButtonClick}>
         <span className="visually-hidden">Начать игру</span>
       </button>
       <h2 className="welcome__rules-title">Правила игры</h2>
@@ -24,7 +24,7 @@ const Welcome = ({gameTime, errorCount, playClickHandler}) => {
 Welcome.propTypes = {
   gameTime: PropTypes.number.isRequired,
   errorCount: PropTypes.number.isRequired,
-  playClickHandler: PropTypes.func,
+  onStartButtonClick: PropTypes.func,
 };
 
 export default Welcome;
