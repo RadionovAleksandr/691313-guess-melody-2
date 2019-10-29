@@ -6,15 +6,15 @@ import Adapter from 'enzyme-adapter-react-16';
 Enzyme.configure({adapter: new Adapter()});
 
 it(`Button Play click in Welcome`, () => {
-  const playClickHandler = jest.fn();
+  const onStartButtonClick = jest.fn();
   const app = shallow(
       <Welcome
-        mistakes={0}
-        minutes={0}
-        playClickHandler={playClickHandler}
+        errorCount={0}
+        gameTime={0}
+        onStartButtonClick={onStartButtonClick}
       />);
 
   const startButton = app.find(`button`);
   startButton.simulate(`click`);
-  expect(playClickHandler).toHaveBeenCalledTimes(1);
+  expect(onStartButtonClick).toHaveBeenCalledTimes(1);
 });
