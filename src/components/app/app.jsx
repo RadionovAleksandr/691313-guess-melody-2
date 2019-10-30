@@ -39,9 +39,12 @@ class App extends PureComponent {
     super(props);
 
     const {settings, questions} = props;
+    const {gameTime, errorCount, currentLevel} = settings;
 
     this.state = {
-      ...settings,
+      gameTime,
+      errorCount,
+      currentLevel,
       questions,
     };
   }
@@ -53,7 +56,6 @@ class App extends PureComponent {
         const isEnd = nextIndex >= this.state.questions.length;
 
         return {
-          ...prevState,
           currentLevel: !isEnd ? nextIndex : -1,
         };
       });
